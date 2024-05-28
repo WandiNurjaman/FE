@@ -1,0 +1,35 @@
+.container{
+display: flex;
+}
+h2{
+    font-size: 42px;
+
+}
+p{
+    font-size: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+    gap: 10px;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+input{
+    Width:519px;
+    Height:74px;
+    border-radius: 55px;
+    margin: 15px auto;
+    padding-left: 20px;
+    font-size: 32px;
+
+}
+button{
+    width: 183px;
+    height: 74px;
+    border-radius: 55px;
+    margin: 15px auto;
+    font-size: 32px;
+}
