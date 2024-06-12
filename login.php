@@ -10,12 +10,12 @@
     
     <div class="container">
         <img src="img/siswa.png" alt="">
-        <form action="">
+        <form action="proses_login.php" method="POST">
            <div class="title">
             <h2>Sign int</h2>
             <p>Masukan Username dengan NISN</p>
            </div>
-            <input type="text" name="username" id="sername" placeholder="Username">
+            <input type="text" name="username" id="username" placeholder="Username">
             <input type="password" name="password" id="password" placeholder="password">
             <button type="submit">Sign up</button>
         </form>
