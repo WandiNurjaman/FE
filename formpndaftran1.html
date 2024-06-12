@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Siswa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .form-group div {
+            width: 25%;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .button-container {
+            text-align: right;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav {
+            background-color: #006b6e;
+            padding: 10px 0;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+        }
+        .nav .navbar-nav a {
+            color: white !important;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .step {
+            flex: 1;
+            text-align: center;
+        }
+        .step.active {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark nav">
+    <a class="navbar-brand" href="#">SMK DARUL HIDAYAH</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PROFIL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PROGRAM KEAHLIAN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">BERITA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PPDB</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="steps">
+        <div class="step active">1. Data Siswa</div>
+        <div class="step">2. Data Orang Tua</div>
+        <div class="step">3. Data Sekolah Asal</div>
+        <progress value="66" max="100"></progress>
+    </div>
+
+    <div class="header">
+        <h1>FORM PENDAFTARAN</h1>
+    </div>
+
+    <div class="form-section">
+        <h2>Data Siswa</h2>
+        <div class="form-group">
+            <div>
+                <label for="nisn">NISN</label>
+                <input type="text" id="nisn" name="nisn" placeholder="Masukan no NISN 10 digit">
+            </div>
+            <div>
+                <label for="nik">NIK</label>
+                <input type="text" id="nik" name="nik" placeholder="Masukan no NIK yang di KK">
+            </div>
+            <div>
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama sesuai ijazah">
+            </div>
+            <div>
+                <label for="tempat_lahir">Tempat Lahir</label>
+                <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat lahir siswa">
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <input type="text" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tgl-bulan_tahun">
+            </div>
+            <div>
+                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <select id="jenis_kelamin" name="jenis_kelamin">
+                    <option value="">Pilih jenis kelamin</option>
+                    <option value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
+                </select>
+            </div>
+            <div>
+                <label for="anak_ke">Anak Ke</label>
+                <select id="anak_ke" name="anak_ke">
+                    <option value="">Pilih anak ke</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div>
+                <label for="jumlah_saudara">Jumlah Saudara</label>
+                <select id="jumlah_saudara" name="jumlah_saudara">
+                    <option value="">Pilih jumlah saudara</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="status_anak">Status Anak</label>
+                <select id="status_anak" name="status_anak">
+                    <option value="">Pilih status</option>
+                    <option value="anak_pertama">Anak Pertama</option>
+                    <option value="anak_kedua">Anak Kedua</option>
+                    <option value="anak_ketiga">Anak Ketiga</option>
+                </select>
+            </div>
+            <div>
+                <label for="alamat">Alamat</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Alamat sekarang">
+            </div>
+            <div>
+                <label for="rt">RT</label>
+                <input type="text" id="rt" name="rt" placeholder="RT">
+            </div>
+            <div>
+                <label for="rw">RW</label>
+                <input type="text" id="rw" name="rw" placeholder="RW">
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="desa">Desa</label>
+                <input type="text" id="desa" name="desa" placeholder="Desa">
+            </div>
+            <div>
+                <label for="kecamatan">Kecamatan</label>
+                <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan">
+            </div>
+            <div>
+                <label for="kab_kota">Kab/kota</label>
+                <input type="text" id="kab_kota" name="kab_kota" placeholder="Kab/kota">
+            </div>
+            <div>
+                <label for="provinsi">Provinsi</label>
+                <input type="text" id="provinsi" name="provinsi" placeholder="Provinsi">
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="submit">Selanjutnya</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
