@@ -1,38 +1,17 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  Pramuka</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>SMK Darul Hidayah</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-        }
-        .header {
-            background-color: #006b6e;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .navbar {
-            background-color: #006b6e;
-            padding: 10px 0;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .navbar a:hover {
-            text-decoration: underline;
         }
         .container {
             width: 80%;
@@ -43,98 +22,129 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-        .content {
-            display: flex;
-        }
-        .main-content {
-            flex: 2;
-            padding-right: 20px;
-        }
-        .main-content h2 {
-            margin-top: 0;
-        }
-        .sidebar {
-            flex: 1;
-            display: grid;
-            gap: 10px;
-        }
-        .sidebar img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            padding: 5px;
-        }
-        .next-button {
-            display: block;
-            width: 100px;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #006b6e;
-            color: white;
+        .header {
             text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
+            margin-bottom: 40px;
         }
-        .next-button:hover {
-            background-color: #09537a;
+        .header h1 {
+            margin: 0;
+        }
+        .nav {
+            background-color: #006b6e;
+            padding: 10px 0;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+        }
+        .nav .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-brand img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        .pramuka-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .pramuka-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .pramuka-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .pramuka-list {
+            list-style: none;
+            padding: 0;
+        }
+        .pramuka-list li {
+            margin: 10px 0;
+        }
+        .pramuka-list img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .pramuka-list a {
+            text-decoration: none;
+            color: #006b6e;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    
+<nav class="navbar navbar-expand-lg navbar-dark nav">
+    <a class="navbar-brand" href="#">
+        <img src="img/image 3.png" alt="Logo"> SMK DARUL HIDAYAH
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PROFIL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PROGRAM KEAHLIAN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">BERITA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PPDB</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">SMK DARUL HIDAYAH</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">PROFIL</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">PROGRAM KEAHLIAN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">BERITA</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">PPDB</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="content">
-            <div class="main-content">
-                <h2>PRAMUKA</h2>
-                <p>ini adalah beberapa kegiatan pramuka yang kita ikuti</p>
-                <p>Alhamdulillah ini adalah beberapa perlombaan yang kami ikuti dan kita menjuarainya. Ini perlombaan dari tingkat kecamatan, kabupaten dan provinsi.</p>
-                <a href="#" class="next-button">Next</a>
-            </div>
-            <div class="sidebar">
-                <img src="image1.jpg" alt="Pramuka 1">
-                <img src="image2.jpg" alt="Pramuka 2">
-                <img src="image3.jpg" alt="Pramuka 3">
-                <img src="image4.jpg" alt="Pramuka 4">
-                <img src="image5.jpg" alt="Pramuka 5">
-            </div>
+<div class="container">
+    <div class="pramuka-section">
+        <h2>PRAMUKA</h2>
+        <p>ini adalah beberapa kegiatan pramuka yang kita ikuti</p>
+        <p>Alhamdulillah ini adalah beberapa perlombaan yang kami ikuti dan kita menjuarainya. Ini perlombaan dari tingkat kecamatan, kabupaten dan provinsi.</p>
+        <ul class="pramuka-list">
+            <li><img src="img_placeholder.png" alt="Pramuka 1"><a href="#">Pramuka 1</a></li>
+            <li><img src="img_placeholder.png" alt="Pramuka 2"><a href="#">Pramuka 2</a></li>
+            <li><img src="img_placeholder.png" alt="Pramuka 3"><a href="#">Pramuka 3</a></li>
+            <li><img src="img_placeholder.png" alt="Pramuka 4"><a href="#">Pramuka 4</a></li>
+            <li><img src="img_placeholder.png" alt="Pramuka 5"><a href="#">Pramuka 5</a></li>
+        </ul>
+        <div class="button-container">
+            <button>Next</button>
         </div>
     </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
