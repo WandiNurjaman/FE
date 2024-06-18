@@ -60,8 +60,8 @@
         }
         .button-container {
             display: flex;
-            justify-content: flex-end; /* Mengatur agar tombol berada di kanan */
-            margin-top: 20px; /* Memberikan ruang atas */
+            justify-content: flex-end;
+            margin-top: 20px;
         }
         .button-container a, .button-container button {
             padding: 10px 20px;
@@ -72,12 +72,12 @@
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-            margin-left: 10px; /* Memberikan ruang antara tombol */
+            margin-left: 10px;
         }
         .button-container .back-button {
             background-color: #ccc;
             color: black;
-            margin-left: 0; /* Menghilangkan margin kiri pada tombol Kembali */
+            margin-left: 0;
         }
         .nav {
             background-color: #006b6e;
@@ -124,19 +124,19 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="keahlian.html">Program Keahlian</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="berita.html">Berita</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="cntak.html">Kontak</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="PPDB.html">PPDB</a>
-              </li>
+            </li>
         </ul>
     </div>
 </nav>
@@ -170,8 +170,6 @@
                     <option value="Swasta">Swasta</option>
                 </select>
             </div>
-            
-                
         </div>
         <div class="form-group">
             <div>
@@ -184,11 +182,21 @@
             </div>
             <div>
                 <label for="pilihan_jurusan">Pilihan Jurusan</label>
-                <input type="text" id="pilihan_jurusan" name="pilihan_jurusan" placeholder="Pilihan Jurusan">
+                <select id="pilihan_jurusan" name="pilihan_jurusan">
+                    <option value="Akuntansi">Akuntansi</option>
+                    <option value="TKJ">TKJ</option>
+                    <option value="TKR">TKR</option>
+                    <option value="RPL">RPL</option>
+                </select>
             </div>
             <div>
                 <label for="ukuran_pakaian">Ukuran Pakaian</label>
-                <input type="text" id="ukuran_pakaian" name="ukuran_pakaian" placeholder="Ukuran Pakaian">
+                <select id="ukuran_pakaian" name="ukuran_pakaian">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XXL">XXL</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -202,11 +210,9 @@
             </div>
         </div>
     </div>
-        <div class="button-container">
-            <a href="form2.html" class="btn btn-secondary back-button">Kembali</a>
-            <button type="submit">Selanjutnya</button>
-        </div>
-    </form>
+    <div class="button-container">
+        <a href="form2.html" class="btn btn-secondary back-button">Kembali</a>
+        <button type="submit">Selanjutnya</button>
     </div>
 </div>
 
