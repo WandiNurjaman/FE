@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Darul Hidayah</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .form-group div {
+            width: 25%;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .button-container {
+            text-align: right;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav {
+            background-color: #006b6e;
+            padding: 10px 0;
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+        }
+        .nav .navbar-nav {
+            margin-left: auto;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .step {
+            flex: 1;
+            text-align: center;
+        }
+        .step.active {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .navbar-brand img {
+            width: 40px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark nav">
+    <a class="navbar-brand" href="#">
+        <img src="img/image 3.png" alt="Logo"> SMK DARUL HIDAYAH
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PROFIL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PROGRAM KEAHLIAN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">BERITA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PPDB</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="steps">
+        <div class="step">1. Data Siswa</div>
+        <div class="step active">2. Data Orang Tua</div>
+        <div class="step">3. Data Sekolah Asal</div>
+        <progress value="66" max="100"></progress>
+    </div>
+
+    <div class="header">
+        <h1>FORM PENDAFTARAN</h1>
+    </div>
+
+    <div class="form-section">
+        <h2>Data Orang Tua</h2>
+        <form action="proses_siswa2.php" method="POST">
+        <div class="form-group">
+            <div>
+                <label for="no_kk">No KK</label>
+                <input type="text" id="no_kk" name="no_kk" placeholder="Masukan No KK">
+            </div>
+            <div>
+                <label for="nik_ayah">NIK Ayah</label>
+                <input type="text" id="nik_ayah" name="nik_ayah" placeholder="Masukan NIK Ayah">
+            </div>
+            <div>
+                <label for="nama_ayah">Nama Ayah</label>
+                <input type="text" id="nama_ayah" name="nama_ayah" placeholder="Nama Ayah">
+            </div>
+            <div>
+                <label for="pendidikan_ayah">Pendidikan Terakhir Ayah</label>
+                <input type="text" id="pendidikan_ayah" name="pendidikan_ayah" placeholder="Pendidikan Terakhir Ayah">
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+                <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" placeholder="Pekerjaan Ayah">
+            </div>
+            <div>
+                <label for="nik_ibu">NIK Ibu</label>
+                <input type="text" id="nik_ibu" name="nik_ibu" placeholder="Masukan NIK Ibu">
+            </div>
+            <div>
+                <label for="nama_ibu">Nama Ibu</label>
+                <input type="text" id="nama_ibu" name="nama_ibu" placeholder="Nama Ibu">
+            </div>
+            <div>
+                <label for="pendidikan_ibu">Pendidikan Terakhir Ibu</label>
+                <input type="text" id="pendidikan_ibu" name="pendidikan_ibu" placeholder="Pendidikan Terakhir Ibu">
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+                <input type="text" id="pekerjaan_ibu" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu">
+            </div>
+            <div>
+                <label for="penghasilan_ayah">Penghasilan Ayah</label>
+                <input type="text" id="penghasilan_ayah" name="penghasilan_ayah" placeholder="Penghasilan Ayah">
+            </div>
+            <div>
+                <label for="penghasilan_ibu">Penghasilan Ibu</label>
+                <input type="text" id="penghasilan_ibu" name="penghasilan_ibu" placeholder="Penghasilan Ibu">
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="submit">
+                Selanjutnya
+            </button>
+        </div>
+    </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
