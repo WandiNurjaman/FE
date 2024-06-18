@@ -1,34 +1,34 @@
 <?php
-include 'koneksi.php';
+// Sertakan file koneksi ke database
+require_once('koneksi.php');
 
-// Retrieve username and password from POST request
+// Tangkap data yang dikirimkan melalui form
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-// Check if the variables are set
-if (!isset($username) || !isset($password)) {
-    header("Location: login.html?login_error=1");
-    exit();
+// Lindungi dari SQL Injection
+$username = mysqli_real_escape_string($conn, $username);
+$password = mysqli_real_escape_string($conn, $password);
+
+// Query untuk memeriksa apakah username dan password cocok
+$query = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'";
+$result = $conn->query($query);
+
+// Periksa apakah query berhasil dieksekusi
+if (!$result) {
+    die("Gagal menjalankan query: " . $conn->error);
 }
 
-// Use prepared statements to prevent SQL injection
-$stmt = $koneksi->prepare("SELECT * FROM admin WHERE username=? AND password=?");
-$stmt->bind_param("ss", $username, $password);
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Check if data is found
-if ($result->num_rows == 1) {
-    // Credentials match, redirect to index.html
+// Periksa apakah data ditemukan
+if ($result->num_rows > 0) {
+    // Jika ditemukan, redirect ke halaman index.html
     header("Location: index.html");
-    exit(); // Important to stop script execution after redirection
+    exit(); // Pastikan exit() digunakan setelah header untuk mencegah eksekusi script lebih lanjut
 } else {
-    // Credentials do not match, redirect back to login.html with error message
-    header("Location: login.html?login_error=1");
-    exit();
+    // Jika tidak ditemukan, berikan pesan error atau respons sesuai kebutuhan
+    echo "Username atau Password salah!";
 }
 
-// Close the statement and connection
-$stmt->close();
-$koneksi->close();
+// Tutup koneksi database
+$conn->close();
 ?>
