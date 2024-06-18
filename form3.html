@@ -59,9 +59,11 @@
             box-sizing: border-box;
         }
         .button-container {
-            text-align: right;
+            display: flex;
+            justify-content: flex-end; /* Mengatur agar tombol berada di kanan */
+            margin-top: 20px; /* Memberikan ruang atas */
         }
-        .button-container button {
+        .button-container a, .button-container button {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #4CAF50;
@@ -69,6 +71,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
+            margin-left: 10px; /* Memberikan ruang antara tombol */
+        }
+        .button-container .back-button {
+            background-color: #ccc;
+            color: black;
+            margin-left: 0; /* Menghilangkan margin kiri pada tombol Kembali */
         }
         .nav {
             background-color: #006b6e;
@@ -136,80 +145,82 @@
 </nav>
 
 
-
 <div class="container">
-    
     <div class="steps">
         <div class="step">1. Data Siswa</div>
-        <div class="step">2. Data Orang Tua</div>
-        <div class="step active">3. Data Sekolah Asal</div>
-        <progress value="100" max="100"></progress>
+        <div class="step active">2. Data Orang Tua</div>
+        <div class="step">3. Data Sekolah Asal</div>
+        <progress value="66" max="100"></progress>
     </div>
-   
-    
+
+    <div class="header">
+        <h1>FORM PENDAFTARAN</h1>
+    </div>
+
     <div class="form-section">
-        <h2>Data Sekolah Asal</h2>
-        <form action="proses_siswa3.php" method="POST" enctype="multipart/form-data">
+        <h2>Data Orang Tua</h2>
+        <form action="proses_siswa2.php" method="POST">
         <div class="form-group">
             <div>
-                <label for="nama_sekolah">Nama Sekolah Asal</label>
-                <input type="text" id="nama_sekolah" name="nama_sekolah" placeholder="Nama Sekolah Asal">
+                <label for="no_kk">No KK</label>
+                <input type="text" id="no_kk" name="no_kk" placeholder="Masukan No KK">
             </div>
             <div>
-                <label for="npsn_sekolah">NPSN Sekolah</label>
-                <input type="text" id="npsn_sekolah" name="npsn_sekolah" placeholder="NPSN Sekolah">
+                <label for="nik_ayah">NIK Ayah</label>
+                <input type="text" id="nik_ayah" name="nik_ayah" placeholder="Masukan NIK Ayah">
             </div>
             <div>
-                <label for="status_sekolah">Status Sekolah</label>
-                <select id="status_sekolah" name="status_sekolah">
-                    <option value="Negeri">Negeri</option>
-                    <option value="Swasta">Swasta</option>
-                </select>
+                <label for="nama_ayah">Nama Ayah</label>
+                <input type="text" id="nama_ayah" name="nama_ayah" placeholder="Nama Ayah">
             </div>
             <div>
-                <label for="jenis_sekolah">Jenis Sekolah</label>
-                <select id="jenis_sekolah" name="jenis_sekolah">
-                    <option value="SD">SD</option>
-                    <option value="SMP">SMP</option>
-                    <option value="SMA">SMA</option>
-                    <option value="SMK">SMK</option>
-                </select>
+                <label for="pendidikan_ayah">Pendidikan Terakhir Ayah</label>
+                <input type="text" id="pendidikan_ayah" name="pendidikan_ayah" placeholder="Pendidikan Terakhir Ayah">
             </div>
         </div>
         <div class="form-group">
             <div>
-                <label for="no_kip">No KIP (opsional)</label>
-                <input type="text" id="no_kip" name="no_kip" placeholder="No KIP">
+                <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+                <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" placeholder="Pekerjaan Ayah">
             </div>
             <div>
-                <label for="no_kis">No KIS (opsional)</label>
-                <input type="text" id="no_kis" name="no_kis" placeholder="No KIS">
+                <label for="nik_ibu">NIK Ibu</label>
+                <input type="text" id="nik_ibu" name="nik_ibu" placeholder="Masukan NIK Ibu">
             </div>
             <div>
-                <label for="pilihan_jurusan">Pilihan Jurusan</label>
-                <input type="text" id="pilihan_jurusan" name="pilihan_jurusan" placeholder="Pilihan Jurusan">
+                <label for="nama_ibu">Nama Ibu</label>
+                <input type="text" id="nama_ibu" name="nama_ibu" placeholder="Nama Ibu">
             </div>
             <div>
-                <label for="ukuran_pakaian">Ukuran Pakaian</label>
-                <input type="text" id="ukuran_pakaian" name="ukuran_pakaian" placeholder="Ukuran Pakaian">
+                <label for="pendidikan_ibu">Pendidikan Terakhir Ibu</label>
+                <input type="text" id="pendidikan_ibu" name="pendidikan_ibu" placeholder="Pendidikan Terakhir Ibu">
             </div>
         </div>
         <div class="form-group">
             <div>
-                <label for="upload_foto">Upload Foto Formal</label>
-                <input type="file" id="upload_foto" name="upload_foto">
+                <label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+                <input type="text" id="pekerjaan_ibu" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu">
             </div>
             <div>
-                <label for="scan_kk">Scan KK</label>
-                <input type="file" id="scan_kk" name="scan_kk">
+                <label for="penghasilan_ayah">Penghasilan Ayah</label>
+                <input type="text" id="penghasilan_ayah" name="penghasilan_ayah" placeholder="Penghasilan Ayah">
+            </div>
+            <div>
+                <label for="penghasilan_ibu">Penghasilan Ibu</label>
+                <input type="text" id="penghasilan_ibu" name="penghasilan_ibu" placeholder="Penghasilan Ibu">
             </div>
         </div>
-    </div>
-    <div class="button-container">
-        <button type="submit">Selanjutnya</button>
+        <div class="button-container">
+            <a href="form2.html" class="btn btn-secondary back-button">Kembali</a>
+            <button type="submit">Selanjutnya</button>
+        </div>
     </form>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        </body>
-        </html>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
