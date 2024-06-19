@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK Darul Hidayah</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Formulir Pendaftaran Orang Tua</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,11 +58,9 @@
             box-sizing: border-box;
         }
         .button-container {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 20px;
+            text-align: right;
         }
-        .button-container a, .button-container button {
+        .button-container button {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #4CAF50;
@@ -71,13 +68,6 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-        .button-container .back-button {
-            background-color: #ccc;
-            color: black;
-            margin-left: 0;
         }
         .nav {
             background-color: #006b6e;
@@ -88,8 +78,8 @@
             color: white;
             margin: 0 10px;
         }
-        .nav .navbar-nav {
-            margin-left: auto;
+        .nav .navbar-nav a {
+            color: white !important;
         }
         .steps {
             display: flex;
@@ -105,36 +95,30 @@
             color: #4CAF50;
             font-weight: bold;
         }
-        .navbar-brand img {
-            width: 40px;
-            margin-right: 10px;
-        }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark nav">
-    <a class="navbar-brand" href="#">
-        <img src="img/image 3.png" alt="Logo"> SMK DARUL HIDAYAH
-    </a>
+    <a class="navbar-brand" href="#">SMK DARUL HIDAYAH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="keahlian.html">Program Keahlian</a>
-            </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="berita.html">Berita</a>
-            </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="cntak.html">Kontak</a>
-            </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="PPDB.html">PPDB</a>
             </li>
         </ul>
@@ -170,6 +154,15 @@
                     <option value="Swasta">Swasta</option>
                 </select>
             </div>
+            <div>
+                <label for="jenis_sekolah">Jenis Sekolah</label>
+                <select id="jenis_sekolah" name="jenis_sekolah">
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
+                    <option value="SMK">SMK</option>
+                </select>
+            </div>
         </div>
         <div class="form-group">
             <div>
@@ -191,12 +184,7 @@
             </div>
             <div>
                 <label for="ukuran_pakaian">Ukuran Pakaian</label>
-                <select id="ukuran_pakaian" name="ukuran_pakaian">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XXL">XXL</option>
-                </select>
+                <input type="text" id="ukuran_pakaian" name="ukuran_pakaian" placeholder="Ukuran Pakaian">
             </div>
         </div>
         <div class="form-group">
@@ -211,13 +199,9 @@
         </div>
     </div>
     <div class="button-container">
-        <a href="form2.html" class="btn btn-secondary back-button">Kembali</a>
         <button type="submit">Selanjutnya</button>
-    </div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+        </html>
