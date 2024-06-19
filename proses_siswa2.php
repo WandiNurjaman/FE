@@ -16,6 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pekerjaan_ibu = $_POST['pekerjaan_ibu'];
     $penghasilan_ibu = $_POST['penghasilan_ibu'];
 
+    // Validasi jika ada field yang kosong (opsional)
+     if (empty($no_kk) || empty($nik_ayah) || empty($nama_ayah) || empty($pendidikan_ayah) ||
+         empty($pekerjaan_ayah) || empty($penghasilan_ayah) || empty($nik_ibu) ||
+         empty($nama_ibu) || empty($pendidikan_ibu) || empty($pekerjaan_ibu) ||
+         empty($penghasilan_ibu)) {
+         echo '<script>alert("Harap lengkapi semua kolom sebelum melanjutkan."); window.history.back();</script>';
+         exit;
+     }
+
     // Query SQL untuk menyimpan data ke database
     $sql = "INSERT INTO data_orang_tua (no_kk, nik_ayah, nama_ayah, pendidikan_ayah, pekerjaan_ayah, penghasilan_ayah, nik_ibu, nama_ibu, pendidikan_ibu, pekerjaan_ibu, penghasilan_ibu) 
             VALUES ('$no_kk', '$nik_ayah', '$nama_ayah', '$pendidikan_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$nik_ibu', '$nama_ibu', '$pendidikan_ibu', '$pekerjaan_ibu', '$penghasilan_ibu')";

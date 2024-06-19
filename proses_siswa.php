@@ -21,15 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kab_kota = $_POST['kab_kota'];
     $provinsi = $_POST['provinsi'];
 
-    // Query SQL untuk menyimpan data ke database
-    $sql = "INSERT INTO data_siswa (nisn, nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, anak_ke, jumlah_saudara, status_anak, alamat, rt, rw, desa, kecamatan, kab_kota, provinsi) 
-            VALUES ('$nisn', '$nik', '$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$anak_ke', '$jumlah_saudara', '$status_anak', '$alamat', '$rt', '$rw', '$desa', '$kecamatan', '$kab_kota', '$provinsi')";
-
-    if ($conn->query($sql) === TRUE) {
-        
-        header("Location: form2.html");
+    // Validasi jika ada field yang kosong
+    if (empty($nisn) || empty($nik) || empty($nama) || empty($tempat_lahir) || empty($tanggal_lahir) ||
+        empty($jenis_kelamin) || empty($anak_ke) || empty($jumlah_saudara) || empty($status_anak) ||
+        empty($alamat) || empty($rt) || empty($rw) || empty($desa) || empty($kecamatan) ||
+        empty($kab_kota) || empty($provinsi)) {
+        echo '<script>alert("Harap lengkapi semua kolom sebelum melanjutkan."); window.history.back();</script>';
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        // Query SQL untuk menyimpan data ke database
+        $sql = "INSERT INTO data_siswa (nisn, nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, anak_ke, jumlah_saudara, status_anak, alamat, rt, rw, desa, kecamatan, kab_kota, provinsi) 
+                VALUES ('$nisn', '$nik', '$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$anak_ke', '$jumlah_saudara', '$status_anak', '$alamat', '$rt', '$rw', '$desa', '$kecamatan', '$kab_kota', '$provinsi')";
+
+        if ($conn->query($sql) === TRUE) {
+            header("Location: form2.html");
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 }
 
