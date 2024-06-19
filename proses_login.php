@@ -1,34 +1,31 @@
 <?php
-// Sertakan file koneksi ke database
-require_once('koneksi.php');
-
-// Tangkap data yang dikirimkan melalui form
+// Mengambil data dari formulir HTML
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-// Lindungi dari SQL Injection
-$username = mysqli_real_escape_string($conn, $username);
-$password = mysqli_real_escape_string($conn, $password);
+// Menghubungkan ke database
+$koneksi = mysqli_connect("localhost", "root", "", "db_profile");
 
-// Query untuk memeriksa apakah username dan password cocok
-$query = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'";
-$result = $conn->query($query);
-
-// Periksa apakah query berhasil dieksekusi
-if (!$result) {
-    die("Gagal menjalankan query: " . $conn->error);
+// Memeriksa koneksi
+if (mysqli_connect_errno()) {
+    die("Koneksi ke database gagal: " . mysqli_connect_error());
 }
 
-// Periksa apakah data ditemukan
-if ($result->num_rows > 0) {
-    // Jika ditemukan, redirect ke halaman index.html
+// Menjalankan query SQL untuk memeriksa kredensial login
+$query = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+$result = mysqli_query($koneksi, $query);
+
+// Memeriksa apakah data ditemukan
+if (mysqli_num_rows($result) == 1) {
+    // Kredensial cocok, arahkan ke halaman index.php
     header("Location: index.html");
-    exit(); // Pastikan exit() digunakan setelah header untuk mencegah eksekusi script lebih lanjut
+    exit(); // Penting untuk menghentikan eksekusi script setelah pengalihan
 } else {
-    // Jika tidak ditemukan, berikan pesan error atau respons sesuai kebutuhan
-    echo "Username atau Password salah!";
+    // Kredensial tidak cocok, arahkan kembali ke halaman login.php dengan pesan error
+    header("Location: login.html?login_error=1");
+    exit();
 }
 
-// Tutup koneksi database
-$conn->close();
+// Menutup koneksi
+mysqli_close($koneksi);
 ?>

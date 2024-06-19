@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <title>Login</title>
+    <title>login</title>
 </head>
 <body>
+    
     <div class="container">
         <img src="img/siswa.png" alt="">
         <form action="proses_login.php" method="POST">
            <div class="title">
-            <h2>Sign in</h2>
-            <p>Masukkan Username dengan NISN</p>
+            <h2>Sign int</h2>
+            <p>Masukan Username dengan NISN</p>
            </div>
-            <input type="text" name="username" id="username" placeholder="Username" required>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-            <button type="submit">Sign in</button>
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="password" name="password" id="password" placeholder="password">
+            <button type="submit">Sign up</button>
         </form>
     </div>
 </body>

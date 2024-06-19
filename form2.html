@@ -61,7 +61,7 @@
         .button-container {
             text-align: right;
         }
-        .button-container button {
+        .button-container a, .button-container button {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #4CAF50;
@@ -69,6 +69,12 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .button-container .back-button {
+            background-color: #ccc;
+            color: black;
         }
         .nav {
             background-color: #006b6e;
@@ -113,24 +119,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">HOME</a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">PROFIL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PROGRAM KEAHLIAN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">BERITA</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">CONTACT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PPDB</a>
-            </li>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="keahlian.html">Program Keahlian</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="berita.html">Berita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cntak.html">Kontak</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="PPDB.html">PPDB</a>
+              </li>
         </ul>
     </div>
 </nav>
@@ -202,13 +205,13 @@
             </div>
         </div>
         <div class="button-container">
-            <button type="submit">
-                Selanjutnya
-            </button>
+            <a href="form1.html" class="btn btn-secondary back-button">Kembali</a>
+            <button type="submit">Selanjutnya</button>
         </div>
     </form>
     </div>
-</div>
+    
+    
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

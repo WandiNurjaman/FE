@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK Darul Hidayah</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Formulir Pendaftaran Orang Tua</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,8 +78,8 @@
             color: white;
             margin: 0 10px;
         }
-        .nav .navbar-nav {
-            margin-left: auto;
+        .nav .navbar-nav a {
+            color: white !important;
         }
         .steps {
             display: flex;
@@ -96,45 +95,35 @@
             color: #4CAF50;
             font-weight: bold;
         }
-        .navbar-brand img {
-            width: 40px;
-            margin-right: 10px;
-        }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark nav">
-    <a class="navbar-brand" href="#">
-        <img src="img/image 3.png" alt="Logo"> SMK DARUL HIDAYAH
-    </a>
+    <a class="navbar-brand" href="#">SMK DARUL HIDAYAH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PROFIL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PROGRAM KEAHLIAN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">BERITA</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">CONTACT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PPDB</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="keahlian.html">Program Keahlian</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="berita.html">Berita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cntak.html">Kontak</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="PPDB.html">PPDB</a>
             </li>
         </ul>
     </div>
 </nav>
-
 
 
 <div class="container">
@@ -149,7 +138,6 @@
     
     <div class="form-section">
         <h2>Data Sekolah Asal</h2>
-        <form action="proses_siswa3.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <div>
                 <label for="nama_sekolah">Nama Sekolah Asal</label>
@@ -168,12 +156,8 @@
             </div>
             <div>
                 <label for="jenis_sekolah">Jenis Sekolah</label>
-                <select id="jenis_sekolah" name="jenis_sekolah">
-                    <option value="SD">SD</option>
-                    <option value="SMP">SMP</option>
-                    <option value="SMA">SMA</option>
-                    <option value="SMK">SMK</option>
-                </select>
+                <input id="jenis_sekolah" name="jenis_sekolah" placeholder="jenis sekolah">
+                  
             </div>
         </div>
         <div class="form-group">
@@ -187,7 +171,12 @@
             </div>
             <div>
                 <label for="pilihan_jurusan">Pilihan Jurusan</label>
-                <input type="text" id="pilihan_jurusan" name="pilihan_jurusan" placeholder="Pilihan Jurusan">
+                <select id="pilihan_jurusan" name="pilihan_jurusan">
+                    <option value="Akuntansi">Akuntansi</option>
+                    <option value="TKJ">TKJ</option>
+                    <option value="TKR">TKR</option>
+                    <option value="RPL">RPL</option>
+                </select>
             </div>
             <div>
                 <label for="ukuran_pakaian">Ukuran Pakaian</label>
@@ -206,8 +195,9 @@
         </div>
     </div>
     <div class="button-container">
+        <a href="form2.html" class="btn btn-secondary back-button">Kembali</a>
         <button type="submit">Selanjutnya</button>
-    </form>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -16,6 +16,7 @@
         .container {
             width: 80%;
             max-width: 1200px;
+            height: 100vh;
             margin: auto;
             background-color: #fff;
             padding: 20px;
@@ -48,25 +49,32 @@
         .pramuka-section {
             text-align: center;
             margin: 40px 0;
+            display: flex;
+            align-items: center;
         }
         .pramuka-section h2 {
-            font-size: 24px;
+            font-size: 30px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
         .pramuka-section p {
-            font-size: 16px;
+            font-size: 25px;
             margin-bottom: 20px;
         }
         .pramuka-list {
             list-style: none;
             padding: 0;
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
         }
         .pramuka-list li {
             margin: 10px 0;
         }
         .pramuka-list img {
-            width: 50px;
-            height: 50px;
+            width: 210px;
+            height: 210px;
             vertical-align: middle;
             margin-right: 10px;
         }
@@ -77,8 +85,10 @@
             vertical-align: middle;
         }
         .button-container {
+            margin-top: 30px; /* Fixed position */
+            bottom: 50px; /* 10px from the bottom */
+            right: 50%; /* 10px from the right */
             text-align: center;
-            margin-top: 20px;
         }
         .button-container button {
             padding: 10px 20px;
@@ -102,43 +112,43 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">HOME</a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">PROFIL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PROGRAM KEAHLIAN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">BERITA</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">CONTACT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PPDB</a>
-            </li>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="keahlian.html">Program Keahlian</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="berita.html">Berita</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cntak.html">Kontak</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="PPDB.html">PPDB</a>
+              </li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
-    <div class="pramuka-section">
-        <h2>PRAMUKA</h2>
-        <p>ini adalah beberapa kegiatan pramuka yang kita ikuti</p>
-        <p>Alhamdulillah ini adalah beberapa perlombaan yang kami ikuti dan kita menjuarainya. Ini perlombaan dari tingkat kecamatan, kabupaten dan provinsi.</p>
-        <ul class="pramuka-list">
-            <li><img src="img_placeholder.png" alt="Pramuka 1"><a href="#">Pramuka 1</a></li>
-            <li><img src="img_placeholder.png" alt="Pramuka 2"><a href="#">Pramuka 2</a></li>
-            <li><img src="img_placeholder.png" alt="Pramuka 3"><a href="#">Pramuka 3</a></li>
-            <li><img src="img_placeholder.png" alt="Pramuka 4"><a href="#">Pramuka 4</a></li>
-            <li><img src="img_placeholder.png" alt="Pramuka 5"><a href="#">Pramuka 5</a></li>
-        </ul>
-        <div class="button-container">
-            <button>Next</button>
+    <div class="pramuka-section" style="display: flex; align-items: start;">
+        <div style="flex: 1; gap: 55px; display: flex; flex-direction: column; align-items: center;">
+            <h2>PRAMUKA</h2>
+            <p>ini adalah beberapa kegiatan pramuka yang kita ikuti</p>
+            <p>Alhamdulillah ini adalah beberapa perlombaan yang kami ikuti dan kita menjuarainya. Ini perlombaan dari tingkat kecamatan, kabupaten dan provinsi.</p>
+            <div class="button-container">
+                <button>Next</button>
+            </div>
         </div>
+        <ul class="pramuka-list" style="flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr);">
+            <li><img src="img/pram1.png" alt="Pramuka 1"></li>
+            <li><img src="img/pram2.png" alt="Pramuka 2"></li>
+            <li><img src="img/pram3.png" alt="Pramuka 3"></li>
+            <li><img src="img/pram4.png" alt="Pramuka 4"></li>
+            <li><img src="img/pram5.png" alt="Pramuka 5"></li>
+        </ul>
+        
     </div>
 </div>
 

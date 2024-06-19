@@ -3,10 +3,73 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background:url(img/bg.png) no-repeat center;
+body {
+    background: url(img/bg.png) no-repeat center center fixed;
     background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(111, 108, 108, 0.2);
+    border-radius: 5px;
+}
+
+main {
+    text-align: center;
+    margin-top: 100px;
+}
+
+main h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    
+}
+
+/* p{
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin-top: 40px;
+} */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p2 {
+    margin: 20px;
+    font-size: 0.9em;
 }
