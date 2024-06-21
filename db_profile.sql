@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jun 2024 pada 14.56
+-- Waktu pembuatan: 21 Jun 2024 pada 16.14
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -62,6 +62,14 @@ CREATE TABLE `data_orang_tua` (
   `penghasilan_ibu` decimal(15,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `data_orang_tua`
+--
+
+INSERT INTO `data_orang_tua` (`id`, `no_kk`, `nik_ayah`, `nama_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `nik_ibu`, `nama_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ayah`, `penghasilan_ibu`) VALUES
+(1, '12', '12', '12', '12', '12', '12', '12', '12', '12', 12.00, 12.00),
+(2, 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 0.00, 0.00);
+
 -- --------------------------------------------------------
 
 --
@@ -78,6 +86,32 @@ CREATE TABLE `data_sekolah_asal` (
   `no_kis` varchar(20) DEFAULT NULL,
   `pilihan_jurusan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `data_sekolah_asal1`
+--
+
+CREATE TABLE `data_sekolah_asal1` (
+  `id` int(11) NOT NULL,
+  `nama_sekolah` varchar(255) NOT NULL,
+  `npsn_sekolah` varchar(50) NOT NULL,
+  `status_sekolah` enum('Negeri','Swasta') NOT NULL,
+  `jenis_sekolah` varchar(50) NOT NULL,
+  `pilihan_jurusan` varchar(50) NOT NULL,
+  `upload_foto` varchar(255) NOT NULL,
+  `scan_kk` varchar(255) NOT NULL,
+  `tanggal_submit` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `data_sekolah_asal1`
+--
+
+INSERT INTO `data_sekolah_asal1` (`id`, `nama_sekolah`, `npsn_sekolah`, `status_sekolah`, `jenis_sekolah`, `pilihan_jurusan`, `upload_foto`, `scan_kk`, `tanggal_submit`) VALUES
+(1, '121212', '1212', 'Swasta', '1111', 'Akuntansi', 'bg.png', 'image 3.png', '2024-06-21 13:38:59'),
+(2, 'aaa', 'aaa', 'Negeri', 'aaa', 'Akuntansi', 'akuntansi.jpg', 'pram1.png', '2024-06-21 13:44:52');
 
 -- --------------------------------------------------------
 
@@ -104,6 +138,14 @@ CREATE TABLE `data_siswa` (
   `kab_kota` varchar(100) NOT NULL,
   `provinsi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `data_siswa`
+--
+
+INSERT INTO `data_siswa` (`id`, `nisn`, `nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `anak_ke`, `jumlah_saudara`, `status_anak`, `alamat`, `rt`, `rw`, `desa`, `kecamatan`, `kab_kota`, `provinsi`) VALUES
+(1, 'dd', 'dd', 'dd', 'dd', '2024-06-29', 'L', 0, 0, 'dd', 'dd', 0, 0, 'dd', 'dd', 'dd', 'dd'),
+(2, 'aaa', 'aaa', 'aaa', 'aaa', '2024-06-15', 'L', 2, 2, 'aaa', 'aaa', 0, 0, 'aaa', 'aaa', 'aaa', 'aaa');
 
 -- --------------------------------------------------------
 
@@ -141,6 +183,12 @@ ALTER TABLE `data_sekolah_asal`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `data_sekolah_asal1`
+--
+ALTER TABLE `data_sekolah_asal1`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `data_siswa`
 --
 ALTER TABLE `data_siswa`
@@ -160,7 +208,7 @@ ALTER TABLE `signup`
 -- AUTO_INCREMENT untuk tabel `data_orang_tua`
 --
 ALTER TABLE `data_orang_tua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_sekolah_asal`
@@ -169,10 +217,16 @@ ALTER TABLE `data_sekolah_asal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `data_sekolah_asal1`
+--
+ALTER TABLE `data_sekolah_asal1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `signup`
