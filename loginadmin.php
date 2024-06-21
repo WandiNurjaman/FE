@@ -10,15 +10,15 @@
     
     <div class="container">
         <img src="img/siswa.png" alt="">
-        <form action="proses_login.php" method="POST">
+        <form action="admin_proses_login.php" method="POST">
            <div class="title">
-            <h2>Sign in</h2>
-           
+            <h2>Login ADM</h2>
+            <p>Masukan Username</p>
            </div>
             <input type="text" name="username" id="username" placeholder="Username">
             <input type="password" name="password" id="password" placeholder="password">
-            <button type="button" onclick="location.href='form1.html'">Sign In</button>
-            <button type="button"onclick="location.href='signup.php'">Sign Up</button>
+            <button type="button" onclick="location.href='dataakunuser.html'">Login</button>
+          
         </form>
     </div>
 </body>
