@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jun 2024 pada 16.14
+-- Waktu pembuatan: 21 Jun 2024 pada 19.11
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -68,7 +68,9 @@ CREATE TABLE `data_orang_tua` (
 
 INSERT INTO `data_orang_tua` (`id`, `no_kk`, `nik_ayah`, `nama_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `nik_ibu`, `nama_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ayah`, `penghasilan_ibu`) VALUES
 (1, '12', '12', '12', '12', '12', '12', '12', '12', '12', 12.00, 12.00),
-(2, 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 0.00, 0.00);
+(2, 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 0.00, 0.00),
+(3, '11', '11', '11', '11', '11', '11', '11', '11', '11', 11.00, 11.00),
+(4, '1111', '1111', '222', '222', '222', '222', '222', '222', '222', 222.00, 222.00);
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,9 @@ CREATE TABLE `data_sekolah_asal1` (
 
 INSERT INTO `data_sekolah_asal1` (`id`, `nama_sekolah`, `npsn_sekolah`, `status_sekolah`, `jenis_sekolah`, `pilihan_jurusan`, `upload_foto`, `scan_kk`, `tanggal_submit`) VALUES
 (1, '121212', '1212', 'Swasta', '1111', 'Akuntansi', 'bg.png', 'image 3.png', '2024-06-21 13:38:59'),
-(2, 'aaa', 'aaa', 'Negeri', 'aaa', 'Akuntansi', 'akuntansi.jpg', 'pram1.png', '2024-06-21 13:44:52');
+(2, 'aaa', 'aaa', 'Negeri', 'aaa', 'Akuntansi', 'akuntansi.jpg', 'pram1.png', '2024-06-21 13:44:52'),
+(3, '11', '11', 'Negeri', '11', 'TKJ', 'bg.png', 'pram2.png', '2024-06-21 14:23:16'),
+(4, 'qqq', 'qqqq', 'Negeri', 'qqqq', 'Akuntansi', 'user-profile.jpg', 'tkj.jpg', '2024-06-21 16:22:05');
 
 -- --------------------------------------------------------
 
@@ -145,7 +149,9 @@ CREATE TABLE `data_siswa` (
 
 INSERT INTO `data_siswa` (`id`, `nisn`, `nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `anak_ke`, `jumlah_saudara`, `status_anak`, `alamat`, `rt`, `rw`, `desa`, `kecamatan`, `kab_kota`, `provinsi`) VALUES
 (1, 'dd', 'dd', 'dd', 'dd', '2024-06-29', 'L', 0, 0, 'dd', 'dd', 0, 0, 'dd', 'dd', 'dd', 'dd'),
-(2, 'aaa', 'aaa', 'aaa', 'aaa', '2024-06-15', 'L', 2, 2, 'aaa', 'aaa', 0, 0, 'aaa', 'aaa', 'aaa', 'aaa');
+(2, 'aaa', 'aaa', 'aaa', 'aaa', '2024-06-15', 'L', 2, 2, 'aaa', 'aaa', 0, 0, 'aaa', 'aaa', 'aaa', 'aaa'),
+(3, '11', '11', '11', '11', '2024-06-29', 'L', 11, 11, '11', '11', 11, 11, '11', '11', '11', '11'),
+(4, '111111', '2222', '333', '4444', '2024-06-27', 'L', 4, 4, '4', '4', 4, 4, '4', '4', '4', '4');
 
 -- --------------------------------------------------------
 
@@ -159,6 +165,17 @@ CREATE TABLE `signup` (
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `signup`
+--
+
+INSERT INTO `signup` (`id`, `email`, `username`, `password`) VALUES
+(1, '123@gmail.com', '123', '$2y$10$7IMRgWzBJirEtWQgd.6tOOAygA/gIqsPxkkooupqk6Q5.poYf7ERe'),
+(2, '123@gmail.com', '111', '$2y$10$wkzUcMcivLsQJ.L0dZV5eeqP2Tr.me/m4301rcpkumRmw461NuX/W'),
+(7, 'qq@gmail', 'qq', '$2y$10$C3nGiWhBUZRl9sE.1NcD/u4cV9lz.6pCx9wSPAurVLfi8QJNTxS.u'),
+(8, 'qq@gmail', 'qq2', '$2y$10$nYJDfnxcRBQy2q5QZvwLr.82QGp66Uoxgx20m.9he6VhLbpl/tp9O'),
+(9, '12@gmail.com', '111', '$2y$10$Z51TfQJW0C6z5zozssNz7.NnGcF8ekZKhEJxq/gIcYcmYqEeqDq86');
 
 --
 -- Indexes for dumped tables
@@ -208,7 +225,7 @@ ALTER TABLE `signup`
 -- AUTO_INCREMENT untuk tabel `data_orang_tua`
 --
 ALTER TABLE `data_orang_tua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_sekolah_asal`
@@ -220,19 +237,19 @@ ALTER TABLE `data_sekolah_asal`
 -- AUTO_INCREMENT untuk tabel `data_sekolah_asal1`
 --
 ALTER TABLE `data_sekolah_asal1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
