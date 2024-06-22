@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jun 2024 pada 19.11
+-- Waktu pembuatan: 22 Jun 2024 pada 07.42
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -171,11 +171,8 @@ CREATE TABLE `signup` (
 --
 
 INSERT INTO `signup` (`id`, `email`, `username`, `password`) VALUES
-(1, '123@gmail.com', '123', '$2y$10$7IMRgWzBJirEtWQgd.6tOOAygA/gIqsPxkkooupqk6Q5.poYf7ERe'),
-(2, '123@gmail.com', '111', '$2y$10$wkzUcMcivLsQJ.L0dZV5eeqP2Tr.me/m4301rcpkumRmw461NuX/W'),
-(7, 'qq@gmail', 'qq', '$2y$10$C3nGiWhBUZRl9sE.1NcD/u4cV9lz.6pCx9wSPAurVLfi8QJNTxS.u'),
-(8, 'qq@gmail', 'qq2', '$2y$10$nYJDfnxcRBQy2q5QZvwLr.82QGp66Uoxgx20m.9he6VhLbpl/tp9O'),
-(9, '12@gmail.com', '111', '$2y$10$Z51TfQJW0C6z5zozssNz7.NnGcF8ekZKhEJxq/gIcYcmYqEeqDq86');
+(1, '123@gmail.com', '123', '123'),
+(14, '111@gmail', '1112', '111');
 
 --
 -- Indexes for dumped tables
@@ -249,7 +246,7 @@ ALTER TABLE `data_siswa`
 -- AUTO_INCREMENT untuk tabel `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
