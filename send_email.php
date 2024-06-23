@@ -1,34 +1,60 @@
 <?php
+session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require 'vendor/phpmailer/phpmailer/src/Exception.php';
-require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+require 'vendor/autoload.php'; // Untuk Composer
+// require 'path/to/PHPMailerAutoload.php'; // Untuk manual
 
+include 'koneksi.php';
 
-$mail = new PHPMailer(true);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nisn = $_POST['nisn'];
+    $message = $_POST['message'];
 
-try {
-    $mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';
-$mail->SMTPAuth = true;
-$mail->Username = 'your-email@gmail.com';
-$mail->Password = 'your-password';
-$mail->SMTPSecure = 'tls'; 
-$mail->Port = 587; 
+    // Ambil data email berdasarkan NISN
+    $sql = "SELECT email FROM data_siswa WHERE nisn = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $nisn);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $email = $row['email'];
 
-    $mail->setFrom('dikkiero@gmail.com', 'dikki');
-    $mail->addAddress('rizaldikki@gmail.com', 'dik');
+    // Konfigurasi PHPMailer
+    $mail = new PHPMailer(true);
 
-    $mail->isHTML(true);  
-    $mail->Subject = 'Test Email';
-    $mail->Body    = 'This is a test email from PHPMailer';
+    try {
+        //Server settings
+        $mail->SMTPDebug = 2; // Atau 3 untuk lebih banyak detail
+        $mail->Debugoutput = 'html';
 
-    
-    $mail->send();
-    echo 'Email has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'kiriseki202@gmail.com';
+        $mail->Password = 'okis jydn osvr jvng'; // Kata sandi aplikasi Gmail
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        //Recipients
+        $mail->setFrom('kiriseki202@gmail.com', 'SMK Darul Hidayat');
+        $mail->addAddress($email);
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = 'Pesan dari SMK Darul Hidayat';
+        $mail->Body    = nl2br($message);
+
+        $mail->send();
+         // Set pesan sukses dalam sesi
+         $_SESSION['success_message'] = 'Pesan telah terkirim';
+
+         // Redirect kembali ke dataemail.php setelah pengiriman berhasil
+         header('Location: dataemail.php');
+         exit;
+     } catch (Exception $e) {
+         echo "Pesan tidak dapat dikirim. Mailer Error: {$mail->ErrorInfo}";
+     }
 }
 ?>
