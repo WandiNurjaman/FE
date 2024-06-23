@@ -31,22 +31,22 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <img class="icon-list" src="img/user.png" alt="icon-email"><a class="nav-link" aria-current="page" href="dataakunuser.php"">Akun User</a>
+                            <img class="icon-list" src="img/user.png" alt="icon-email"><a class="nav-link" aria-current="page" href="dataakunuser.php">Akun User</a>
                         </li>
                         <li class="nav-item">
-                            <img class="icon-list" src="img/phone.png" alt="icon-email"><a class="nav-link" href="datapenerimaan.php"">Konfirmasi Pendaftaran</a>
+                            <img class="icon-list" src="img/phone.png" alt="icon-email"><a class="nav-link" href="datapenerimaan.php">Konfirmasi Pendaftaran</a>
                         </li>
                         <li class="nav-item">
-                        <img class="icon-list" src="img/email.png" alt="icon-email"><a class="nav-link" href="dataemail.php"">Send Email</a>
+                            <img class="icon-list" src="img/email.png" alt="icon-email"><a class="nav-link" href="dataemail.php">Send Email</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="admin_logout.php">Sign Out</a>
-                    </li>
-                </ul>
-              </div>
-          </div>
+                            <a class="nav-link" href="admin_logout.php">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </nav>
+    </nav>
 
     <div class="container mt-5 pt-3">
         <div class="row">
@@ -69,52 +69,58 @@
                     <th>NISN</th>
                     <th>Nama</th>
                     <th>Jurusan</th>
-                    <th>Action</th>
-                    <th>Status</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    
                 </tr>
             </thead>
             <tbody>
             <?php
-include 'koneksi.php';
+            include 'koneksi.php';
 
-$records_per_page = 10;
-$current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-if ($current_page < 1) $current_page = 1;
+            $records_per_page = 10;
+            $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+            if ($current_page < 1) $current_page = 1;
 
-$offset = ($current_page - 1) * $records_per_page;
+            $offset = ($current_page - 1) * $records_per_page;
 
-$total_records_result = $conn->query("SELECT COUNT(*) AS total FROM data_siswa");
-$total_records = $total_records_result->fetch_assoc()['total'];
+            $total_records_result = $conn->query("SELECT COUNT(*) AS total FROM data_siswa");
+            $total_records = $total_records_result->fetch_assoc()['total'];
 
-$total_pages = ceil($total_records / $records_per_page);
+            $total_pages = ceil($total_records / $records_per_page);
 
-$sql = "SELECT * FROM data_siswa LIMIT $records_per_page OFFSET $offset";
-$result = $conn->query($sql);
+            $sql = "SELECT * FROM data_siswa LIMIT $records_per_page OFFSET $offset";
+            $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    $no = $offset + 1;
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $no++ . "</td>";
-        echo "<td>" . $row['nisn'] . "</td>";
-        echo "<td>" . $row['nama'] . "</td>";
-        echo "<td>" . (isset($row['jurusan']) ? $row['jurusan'] : 'N/A') . "</td>";
-        echo "<td>
-                <button class='btn btn-dark'><img width='10px' src='/img/pdf.png' alt=''>data</button>
-                <button class='btn btn-warning'><img width='15px' src='/img/pencil.png' alt=''></button>
-                <button class='btn btn-danger'><img width='15px' src='/img/trash.png' alt=''></button>
-            </td>";
-        echo "<td>
-                <button class='btn btn-" . (isset($row['status']) && $row['status'] == 'konfirmasi' ? 'success' : 'danger') . "'>" . (isset($row['status']) ? $row['status'] : 'N/A') . "</button>
-            </td>";
-        echo "</tr>";
-    }
-} else {
-    echo "<tr><td colspan='6'>Tidak ada data</td></tr>";
-}
+            if ($result->num_rows > 0) {
+                $no = $offset + 1;
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $no++ . "</td>";
+                    echo "<td>" . $row['nisn'] . "</td>";
+                    echo "<td>" . $row['nama'] . "</td>";
+                    echo "<td>" . (isset($row['jurusan']) ? $row['jurusan'] : 'N/A') . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>
+                            <form action='send_email.php' method='post'>
+                                <input type='hidden' name='nisn' value='" . $row['nisn'] . "'>
+                                <textarea name='message' class='form-control' rows='3' placeholder='Masukkan pesan'></textarea>
+                                <button type='submit' class='btn btn-success mt-2'>Kirim</button>
+                            </form>
+                        </td>";
+                    echo "<td>";
+                    if (isset($row['status'])) {
+                        echo "<button class='btn btn-" . ($row['status'] == 'konfirmasi' ? 'success' : 'danger') . "'>" . $row['status'] . "</button>";
+                    }
+                    echo "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='7'>Tidak ada data</td></tr>";
+            }
 
-$conn->close();
-?>
+            $conn->close();
+            ?>
             </tbody>
         </table>
 

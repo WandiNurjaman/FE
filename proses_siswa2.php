@@ -1,8 +1,7 @@
 <?php
-// Sertakan file koneksi ke database
+
 include 'koneksi.php';
 
-// Ambil nilai dari formulir
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $no_kk = $_POST['no_kk'];
     $nik_ayah = $_POST['nik_ayah'];
@@ -16,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pekerjaan_ibu = $_POST['pekerjaan_ibu'];
     $penghasilan_ibu = $_POST['penghasilan_ibu'];
 
-    // Validasi jika ada field yang kosong (opsional)
+   
      if (empty($no_kk) || empty($nik_ayah) || empty($nama_ayah) || empty($pendidikan_ayah) ||
          empty($pekerjaan_ayah) || empty($penghasilan_ayah) || empty($nik_ibu) ||
          empty($nama_ibu) || empty($pendidikan_ibu) || empty($pekerjaan_ibu) ||
@@ -25,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          exit;
      }
 
-    // Query SQL untuk menyimpan data ke database
+ 
     $sql = "INSERT INTO data_orang_tua (no_kk, nik_ayah, nama_ayah, pendidikan_ayah, pekerjaan_ayah, penghasilan_ayah, nik_ibu, nama_ibu, pendidikan_ibu, pekerjaan_ibu, penghasilan_ibu) 
             VALUES ('$no_kk', '$nik_ayah', '$nama_ayah', '$pendidikan_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$nik_ibu', '$nama_ibu', '$pendidikan_ibu', '$pekerjaan_ibu', '$penghasilan_ibu')";
 
@@ -36,6 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Tutup koneksi
 $conn->close();
 ?>

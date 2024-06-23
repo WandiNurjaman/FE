@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jun 2024 pada 07.42
+-- Waktu pembuatan: 23 Jun 2024 pada 07.23
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`) VALUES
-('001', 'ahmad', 'kiriseki202', 'kiririse202');
+('001', 'ahmad', 'kiriseki202', 'kiririse202'),
+('2', 'Dikki', 'dikki08', 'dikki088');
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,9 @@ INSERT INTO `data_orang_tua` (`id`, `no_kk`, `nik_ayah`, `nama_ayah`, `pendidika
 (1, '12', '12', '12', '12', '12', '12', '12', '12', '12', 12.00, 12.00),
 (2, 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 'aaa', 0.00, 0.00),
 (3, '11', '11', '11', '11', '11', '11', '11', '11', '11', 11.00, 11.00),
-(4, '1111', '1111', '222', '222', '222', '222', '222', '222', '222', 222.00, 222.00);
+(4, '1111', '1111', '222', '222', '222', '222', '222', '222', '222', 222.00, 222.00),
+(5, '12121331331', '12131141444', 'steven', 's3', 'doktor', '121133', 'cyntia', 's3', 'profesor', 2.80, 3.00),
+(6, 'asadadada', 'adadadada', 'dadada', 'dadadaa', 'adadda', 'adadaa', 'adadda', 'daadad', 'adadad', 0.00, 0.00);
 
 -- --------------------------------------------------------
 
@@ -101,7 +104,6 @@ CREATE TABLE `data_sekolah_asal1` (
   `npsn_sekolah` varchar(50) NOT NULL,
   `status_sekolah` enum('Negeri','Swasta') NOT NULL,
   `jenis_sekolah` varchar(50) NOT NULL,
-  `pilihan_jurusan` varchar(50) NOT NULL,
   `upload_foto` varchar(255) NOT NULL,
   `scan_kk` varchar(255) NOT NULL,
   `tanggal_submit` timestamp NOT NULL DEFAULT current_timestamp()
@@ -111,11 +113,15 @@ CREATE TABLE `data_sekolah_asal1` (
 -- Dumping data untuk tabel `data_sekolah_asal1`
 --
 
-INSERT INTO `data_sekolah_asal1` (`id`, `nama_sekolah`, `npsn_sekolah`, `status_sekolah`, `jenis_sekolah`, `pilihan_jurusan`, `upload_foto`, `scan_kk`, `tanggal_submit`) VALUES
-(1, '121212', '1212', 'Swasta', '1111', 'Akuntansi', 'bg.png', 'image 3.png', '2024-06-21 13:38:59'),
-(2, 'aaa', 'aaa', 'Negeri', 'aaa', 'Akuntansi', 'akuntansi.jpg', 'pram1.png', '2024-06-21 13:44:52'),
-(3, '11', '11', 'Negeri', '11', 'TKJ', 'bg.png', 'pram2.png', '2024-06-21 14:23:16'),
-(4, 'qqq', 'qqqq', 'Negeri', 'qqqq', 'Akuntansi', 'user-profile.jpg', 'tkj.jpg', '2024-06-21 16:22:05');
+INSERT INTO `data_sekolah_asal1` (`id`, `nama_sekolah`, `npsn_sekolah`, `status_sekolah`, `jenis_sekolah`, `upload_foto`, `scan_kk`, `tanggal_submit`) VALUES
+(1, '121212', '1212', 'Swasta', '1111', 'bg.png', 'image 3.png', '2024-06-21 13:38:59'),
+(2, 'aaa', 'aaa', 'Negeri', 'aaa', 'akuntansi.jpg', 'pram1.png', '2024-06-21 13:44:52'),
+(3, '11', '11', 'Negeri', '11', 'bg.png', 'pram2.png', '2024-06-21 14:23:16'),
+(4, 'qqq', 'qqqq', 'Negeri', 'qqqq', 'user-profile.jpg', 'tkj.jpg', '2024-06-21 16:22:05'),
+(5, 'smptaruna', '121333', 'Negeri', 'smp', 'siswa.png', 'tkj.jpg', '2024-06-22 07:52:00'),
+(6, 'smp sini', '12131313', 'Negeri', 'smp', 'user-profile.jpg', 'bg.png', '2024-06-22 17:28:21'),
+(7, 'aaaaa', 'aaaaa', 'Negeri', 'aaaaa', 'tkr.jpg', 'email.png', '2024-06-23 05:02:12'),
+(8, 'aaaaa', 'aaaaa', 'Negeri', 'aaaaa', 'tkr.jpg', 'email.png', '2024-06-23 05:03:52');
 
 -- --------------------------------------------------------
 
@@ -140,18 +146,19 @@ CREATE TABLE `data_siswa` (
   `desa` varchar(100) NOT NULL,
   `kecamatan` varchar(100) NOT NULL,
   `kab_kota` varchar(100) NOT NULL,
-  `provinsi` varchar(100) NOT NULL
+  `provinsi` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `jurusan` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `data_siswa`
 --
 
-INSERT INTO `data_siswa` (`id`, `nisn`, `nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `anak_ke`, `jumlah_saudara`, `status_anak`, `alamat`, `rt`, `rw`, `desa`, `kecamatan`, `kab_kota`, `provinsi`) VALUES
-(1, 'dd', 'dd', 'dd', 'dd', '2024-06-29', 'L', 0, 0, 'dd', 'dd', 0, 0, 'dd', 'dd', 'dd', 'dd'),
-(2, 'aaa', 'aaa', 'aaa', 'aaa', '2024-06-15', 'L', 2, 2, 'aaa', 'aaa', 0, 0, 'aaa', 'aaa', 'aaa', 'aaa'),
-(3, '11', '11', '11', '11', '2024-06-29', 'L', 11, 11, '11', '11', 11, 11, '11', '11', '11', '11'),
-(4, '111111', '2222', '333', '4444', '2024-06-27', 'L', 4, 4, '4', '4', 4, 4, '4', '4', '4', '4');
+INSERT INTO `data_siswa` (`id`, `nisn`, `nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `anak_ke`, `jumlah_saudara`, `status_anak`, `alamat`, `rt`, `rw`, `desa`, `kecamatan`, `kab_kota`, `provinsi`, `email`, `jurusan`) VALUES
+(7, '1111', '2345', 'iman', 'dieu', '2024-06-29', 'L', 2, 2, '1', 'rr', 1, 2, 'gdg', 'gggg', 'gddddddd', 'dgdgdg', 'dgdgdg@gmail.com', 'Teknik Kendaraan Ringan'),
+(8, '1234567899', '13144144414414', 'dikki', 'tasikmalaya', '2024-06-05', 'L', 1, 2, 'kandung', 'tasikmalaya', 1, 1, 'sariwangi', 'sariwang', 'sariwang', 'sariwang', 'dikki@gmail.com', 'Akuntansi'),
+(9, '1234567890', '1212121212', 'dadu', 'aaaa', '2024-06-29', 'L', 1, 3, 'adaaa', 'asasa', 2, 2, 'addad', 'ffffff', 'fffff', 'gdd', 'aaddda@gmail.com', 'Rekayasa Perangkat Lunak');
 
 -- --------------------------------------------------------
 
@@ -172,7 +179,8 @@ CREATE TABLE `signup` (
 
 INSERT INTO `signup` (`id`, `email`, `username`, `password`) VALUES
 (1, '123@gmail.com', '123', '123'),
-(14, '111@gmail', '1112', '111');
+(14, '111@gmail', '1112', '111'),
+(15, 'dikki@gmail.com', 'dikki', 'dikki123');
 
 --
 -- Indexes for dumped tables
@@ -222,7 +230,7 @@ ALTER TABLE `signup`
 -- AUTO_INCREMENT untuk tabel `data_orang_tua`
 --
 ALTER TABLE `data_orang_tua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_sekolah_asal`
@@ -234,19 +242,19 @@ ALTER TABLE `data_sekolah_asal`
 -- AUTO_INCREMENT untuk tabel `data_sekolah_asal1`
 --
 ALTER TABLE `data_sekolah_asal1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

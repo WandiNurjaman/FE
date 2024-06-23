@@ -20,26 +20,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kecamatan = $_POST['kecamatan'];
     $kab_kota = $_POST['kab_kota'];
     $provinsi = $_POST['provinsi'];
+    $jurusan = $_POST['jurusan'];
+    $email = $_POST['email']; // Ambil nilai email dari formulir
 
-    // Validasi jika ada field yang kosong
+    // Periksa apakah semua kolom telah diisi
     if (empty($nisn) || empty($nik) || empty($nama) || empty($tempat_lahir) || empty($tanggal_lahir) ||
         empty($jenis_kelamin) || empty($anak_ke) || empty($jumlah_saudara) || empty($status_anak) ||
         empty($alamat) || empty($rt) || empty($rw) || empty($desa) || empty($kecamatan) ||
-        empty($kab_kota) || empty($provinsi)) {
+        empty($kab_kota) || empty($provinsi) || empty($jurusan) || empty($email)) { // Tambahkan pemeriksaan email
         echo '<script>alert("Harap lengkapi semua kolom sebelum melanjutkan."); window.history.back();</script>';
     } else {
-        // Query SQL untuk menyimpan data ke database
-        $sql = "INSERT INTO data_siswa (nisn, nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, anak_ke, jumlah_saudara, status_anak, alamat, rt, rw, desa, kecamatan, kab_kota, provinsi) 
-                VALUES ('$nisn', '$nik', '$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$anak_ke', '$jumlah_saudara', '$status_anak', '$alamat', '$rt', '$rw', '$desa', '$kecamatan', '$kab_kota', '$provinsi')";
+        // Perintah SQL untuk memasukkan data ke dalam tabel data_siswa
+        $sql = "INSERT INTO data_siswa (nisn, nik, nama, tempat_lahir, tanggal_lahir, jenis_kelamin, anak_ke, jumlah_saudara, status_anak, alamat, rt, rw, desa, kecamatan, kab_kota, provinsi, jurusan, email) 
+                VALUES ('$nisn', '$nik', '$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$anak_ke', '$jumlah_saudara', '$status_anak', '$alamat', '$rt', '$rw', '$desa', '$kecamatan', '$kab_kota', '$provinsi', '$jurusan', '$email')";
 
+        // Eksekusi perintah SQL dan periksa apakah berhasil
         if ($conn->query($sql) === TRUE) {
-            header("Location: form2.html");
+            header("Location: form2.html"); // Redirect ke halaman selanjutnya setelah berhasil disimpan
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
 }
 
-// Tutup koneksi
 $conn->close();
 ?>

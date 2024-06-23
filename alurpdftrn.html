@@ -1,91 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK Darul Hidayah</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>PPDB</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-        }
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .header {
+            background: url('') no-repeat center;
+            background-size: cover;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        .header h1 {
-            margin: 0;
-        }
-        .nav {
+        .navbar {
             background-color: #006b6e;
-            padding: 10px 0;
-        }
-        .nav a {
-            text-decoration: none;
-            color: white;
-            margin: 0 10px;
-        }
-        .nav .navbar-nav {
-            margin-left: auto;
         }
         .navbar-brand img {
             width: 40px;
             margin-right: 10px;
         }
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button-container button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
+        .navbar-nav .nav-link {
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
         }
-        .content {
-            text-align: center;
-            margin: 40px 0;
-        }
-        .content img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .navbar-nav .nav-link:hover {
+            text-decoration: underline;
         }
         .login-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: white;
-            border: none;
+            background-color: white;
+            color: #006b6e;
+            padding: 5px 10px;
             border-radius: 5px;
-            cursor: pointer;
             text-decoration: none;
+            font-weight: bold;
+        }
+        .login-button:hover {
+            background-color: #f0f0f0;
+        }
+        main {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
+            color: #fafcfc;
+        }
+        main h1 {
+            color: #fafcfc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #006b6e;
+            color: white;
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark nav">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="#">
         <img src="img/image 3.png" alt="Logo"> SMK DARUL HIDAYAH
+    </a>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -93,21 +70,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="keahlian.html">Program Keahlian</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="berita.html">Berita</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cntak.html">Kontak</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="PPDB.html">PPDB</a>
-              </li>
+                <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="alurpdftrn.html">Alur Pendaftaran</a>
+            
+            </li>
         </ul>
+        <a href="login.php" class="login-button ml-2">Login</a>
     </div>
 </nav>
 
