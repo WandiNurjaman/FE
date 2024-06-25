@@ -1,12 +1,6 @@
 <?php
-
-session_start();
-
-session_unset();
-
-
-session_destroy();
-
-header("Location: index.html"); 
-exit;
+session_start(); // Mulai sesi
+session_destroy(); // Hancurkan semua sesi
+header("Location: loginadmin.php"); // Arahkan ke halaman login
+exit();
 ?>
